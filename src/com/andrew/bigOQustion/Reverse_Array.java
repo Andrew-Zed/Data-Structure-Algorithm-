@@ -11,6 +11,7 @@ public class Reverse_Array {
 
     }
 
+    //method to reverse an array using iterative approach.
     void reverse(int[] array) {
       for (int i=0; i<array.length/2; i++){
           int other = array.length-i - 1;
