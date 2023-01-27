@@ -18,9 +18,24 @@ public class Main {
         TwoDimensionalArray twoDArray = new TwoDimensionalArray(3, 3);
         twoDArray.insertValueInTheArray(0, 0, 10);
         twoDArray.insertValueInTheArray(0,0,10);
+        twoDArray.insertValueInTheArray(0, 1, 20);
+        twoDArray.insertValueInTheArray(0, 2, 30);
+        twoDArray.insertValueInTheArray(1,0, 40);
+        twoDArray.insertValueInTheArray(1, 1, 50);
+        twoDArray.insertValueInTheArray(1,2,60);
+        twoDArray.insertValueInTheArray(2, 0, 70);
+        twoDArray.insertValueInTheArray(2,1, 80);
+        twoDArray.insertValueInTheArray(2,2,90);
         System.out.println(Arrays.deepToString(twoDArray.arr));
         System.out.println("+++++++++++++++++++++++++");
         System.out.println(twoDArray);
+
+        System.out.println("Accessing a 2D Array ================================== ");
+        twoDArray.accessCell(0,0);
+
+        System.out.println("Traversing a 2D Array ================================== ");
+        twoDArray.traverse2DArray();
+        System.out.println("===========================================");
 
 
     }

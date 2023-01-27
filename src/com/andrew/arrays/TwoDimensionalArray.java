@@ -32,6 +32,26 @@ public class TwoDimensionalArray {
 
     }
 
+    // Accessing cell value from a given array
+     void accessCell(int row, int col) {
+         System.out.println("\nAccessing Row# " + row + ", Col# " + col);
+          try {
+              System.out.println("Cell value is " + arr[row][col]);
+          } catch (ArrayIndexOutOfBoundsException e) {
+              System.out.println("Invalid Index for 2D array");
+          }
+     }
+
+     // Traverse 2D array
+    void traverse2DArray() {
+        for (int row = 0; row < arr.length; row++) {
+            for(int col = 0; col < arr[0].length; col++) {
+                System.out.print(arr[row][col] + " ");
+            }
+            System.out.println();
+        }
+    }
+
 
     @Override
     public String toString() {
