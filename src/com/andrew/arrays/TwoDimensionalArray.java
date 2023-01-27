@@ -52,6 +52,19 @@ public class TwoDimensionalArray {
         }
     }
 
+    // Searching a single value from the Array
+    void searchingValue(int value) {
+        for (int row= 0; row<arr.length; row++) {
+            for (int col=0; col < arr[0].length; col++){
+                if (arr[row][col] == value) {
+                    System.out.println("The value " + value + " is found at row: " + row + " Col " + col);
+                    return;
+                }
+            }
+        }
+        System.out.println(" The value " + value + " is not found in the 2D array");
+    }
+
 
     @Override
     public String toString() {

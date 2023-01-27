@@ -37,6 +37,9 @@ public class Main {
         twoDArray.traverse2DArray();
         System.out.println("===========================================");
 
+        System.out.println("Searching Value in 2D Array");
+        twoDArray.searchingValue(50);
+
 
     }
 
