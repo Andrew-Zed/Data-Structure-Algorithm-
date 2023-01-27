@@ -40,6 +40,11 @@ public class Main {
         System.out.println("Searching Value in 2D Array");
         twoDArray.searchingValue(50);
 
+        System.out.println("================== deleting value from array =======================");
+
+        System.out.println("Deleting value from a 2D array i.e setting the value to the default value");
+        twoDArray.deleteValueFromArray(2,2);
+
 
     }
 

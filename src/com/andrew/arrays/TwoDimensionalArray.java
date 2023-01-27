@@ -65,6 +65,17 @@ public class TwoDimensionalArray {
         System.out.println(" The value " + value + " is not found in the 2D array");
     }
 
+    // Deleting value from Array
+    void deleteValueFromArray(int row, int col) {
+        try {
+            System.out.println("Successfully deleted: " + arr[row][col]);
+            arr[row][col] = Integer.MIN_VALUE;
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("This index is not valid for the array ");
+        }
+    }
+
 
     @Override
     public String toString() {
