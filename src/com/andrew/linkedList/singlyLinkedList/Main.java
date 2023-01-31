@@ -14,6 +14,7 @@ public class Main {
 //        System.out.println(sLL.head.next.next.value);
 
         sLL.traversalSinglyLinkedList();
+        sLL.searchNode(8);
     }
 
 }
