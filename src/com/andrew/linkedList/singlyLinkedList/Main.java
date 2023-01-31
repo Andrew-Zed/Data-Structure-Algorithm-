@@ -17,6 +17,8 @@ public class Main {
 //        sLL.searchNode(8);
         sLL.deletionOfNode(7);
         sLL.traversalSinglyLinkedList();
+        sLL.deleteSLL();
+        sLL.traversalSinglyLinkedList();
     }
 
 }

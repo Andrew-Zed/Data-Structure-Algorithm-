@@ -111,6 +111,12 @@ public class Singly_LinkedList {
         }
     }
 
+    // Delete Entire SinglyLinkedList
+    void deleteSLL() {
+        head = null;
+        tail = null;
+        System.out.println("The SLL deleted Successfully");
+    }
 
 
 }
