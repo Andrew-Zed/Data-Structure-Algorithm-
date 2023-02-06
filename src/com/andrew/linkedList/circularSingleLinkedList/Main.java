@@ -10,5 +10,6 @@ public class Main {
         System.out.println("head -> " +csll.head.value);
         System.out.println("================================");
         csll.traversalCSLL();
+        csll.searchNode(15);
     }
 }
