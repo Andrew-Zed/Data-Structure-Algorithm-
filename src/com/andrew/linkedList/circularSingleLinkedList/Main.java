@@ -7,6 +7,8 @@ public class Main {
         csll.insertCSLL(4,0); // inserting a node at the beginning of LinkedList (location 0)
         csll.insertCSLL(7, 1); // inserting a node at the beginning of LinkedList (location 1)
         csll.insertCSLL(2, 8); // inserting a node at the beginning of LinkedList (location 8)
-        System.out.println(csll.head.value);
+        System.out.println("head -> " +csll.head.value);
+        System.out.println("================================");
+        csll.traversalCSLL();
     }
 }
