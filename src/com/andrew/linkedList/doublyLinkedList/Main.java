@@ -9,5 +9,7 @@ class Main {
         dll.insertDLL(5, 7) ;
         System.out.println(dll.head.next.value);
         dll.traverseDLL();
+        dll.reverseTraverseDLL();
+        dll.searchNode(5);
     }
 }
