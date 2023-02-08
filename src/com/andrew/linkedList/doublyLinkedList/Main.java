@@ -13,5 +13,7 @@ class Main {
         dll.searchNode(5) ;
         dll.deleteNodeDLL(7);
         dll.traverseDLL();
+        dll.deleteDLL();
+        dll.traverseDLL();
     }
 }
