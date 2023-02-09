@@ -13,5 +13,9 @@ class Main {
         cdll.traverseCDLL();
         cdll.reverseTraversalCDLL();
         cdll.searchNode(17);
+        System.out.println("=========================================");
+        cdll.traverseCDLL();
+        cdll.deleteNodeCDLL(3);
+        cdll.traverseCDLL();
     }
 }
