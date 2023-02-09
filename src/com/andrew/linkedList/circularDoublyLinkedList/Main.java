@@ -6,6 +6,10 @@ class Main {
         cdll.createCDLL(1);
         System.out.println(cdll.head.value);
         cdll.insertNode(2, 1);
-        System.out.println(cdll.head.value);
+        cdll.insertNode(7, 2);
+        cdll.insertNode(10, 3);
+        cdll.insertNode(5, 8);
+        cdll.insertNode(4, 4);
+        cdll.traverseCDLL();
     }
 }
