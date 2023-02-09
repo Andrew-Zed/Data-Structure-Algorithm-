@@ -12,5 +12,6 @@ class Main {
         cdll.insertNode(4, 4);
         cdll.traverseCDLL();
         cdll.reverseTraversalCDLL();
+        cdll.searchNode(17);
     }
 }
