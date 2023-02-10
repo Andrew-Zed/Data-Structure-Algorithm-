@@ -3,6 +3,8 @@ package com.andrew.linkedList.interviewQuestions;
 import java.util.HashSet;
 
 class Questions {
+
+    // Question 1 - Delete duplicate
     void deleteDuplicate(LinkedList ll) {
         HashSet<Integer> hs = new HashSet<>();
         Node current = ll.head;
@@ -19,4 +21,20 @@ class Questions {
             current = current.next;
         }
     }
+
+    // Question 2 - Nth to the Last
+    Node nthToTheLast(LinkedList ll, int n) {
+        Node p1 = ll.head;
+        Node p2 = ll.head;
+        for (int i = 0; i < n; i++) {
+            if (p2 == null) return null;
+            p2 = p2.next;
+        }
+        while (p2 != null) {
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+        return  p1;
+    }
+
 }

@@ -14,6 +14,8 @@ public class Main {
         Questions qs = new Questions();
         qs.deleteDuplicate(ll);
         ll.traverselLL();
+        Node n = qs.nthToTheLast(ll, 3);
+        System.out.println(n.value);
 
     }
 }
