@@ -8,7 +8,12 @@ public class Main {
         ll.insertNode(3);
         ll.insertNode(4);
         ll.insertNode(5);
-        ll.traversalLL();
+        ll.insertNode(3);
+        ll.insertNode(6);
+        ll.traverselLL();
+        Questions qs = new Questions();
+        qs.deleteDuplicate(ll);
+        ll.traverselLL();
 
     }
 }

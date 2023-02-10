@@ -1,6 +1,6 @@
 package com.andrew.linkedList.interviewQuestions;
 
-public class LinkedList {
+class LinkedList {
     Node head;
     Node tail;
     int size;
@@ -23,7 +23,7 @@ public class LinkedList {
         size++;
     }
 
-    void traversalLL(){
+    void traverselLL(){
         Node tempNode = head;
         for (int i=0; i<size; i++){
             System.out.print(tempNode.value);
