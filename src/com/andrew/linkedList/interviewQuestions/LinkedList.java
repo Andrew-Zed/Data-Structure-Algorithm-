@@ -14,7 +14,11 @@ class LinkedList {
         size = 1;
     }
 
-    void insertNode(int nodeValue){
+    void insertNode(int nodeValue) {
+        if (head == null) {
+            createLL(nodeValue);
+            return;
+        }
         Node newNode = new Node();
         newNode.value = nodeValue;
         newNode.next = null;
@@ -23,7 +27,7 @@ class LinkedList {
         size++;
     }
 
-    void traverselLL(){
+    void traverseLL() {
         Node tempNode = head;
         for (int i=0; i<size; i++){
             System.out.print(tempNode.value);
