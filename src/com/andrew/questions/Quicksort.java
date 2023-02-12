@@ -28,6 +28,13 @@ public class Quicksort {
         }
         int pivot = array[highIndex];
 
+        int leftPointer = partition(array, lowIndex, highIndex, pivot);
+
+        quicksort(array, lowIndex, leftPointer - 1);
+        quicksort(array, leftPointer + 1, highIndex);
+    }
+
+    private static int partition(int[] array, int lowIndex, int highIndex, int pivot) {
         int leftPointer = lowIndex;
         int rightPointer = highIndex;
 
@@ -41,9 +48,7 @@ public class Quicksort {
             swap(array, leftPointer, rightPointer);
         }
         swap(array, leftPointer, highIndex);
-
-        quicksort(array, lowIndex, leftPointer - 1);
-        quicksort(array, leftPointer + 1, highIndex);
+        return leftPointer;
     }
 
     private static void swap(int[] array, int index1, int index2) {
