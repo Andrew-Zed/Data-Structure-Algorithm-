@@ -19,18 +19,24 @@ public class Main {
 //        qs.partition(ll, 4);
 //        ll.traverseLL();
         LinkedList llA = new LinkedList();
-        llA.insertNode(7);
+        llA.insertNode(3);
         llA.insertNode(1);
-        llA.insertNode(6);
+        llA.insertNode(5);
+        llA.insertNode(9);
         LinkedList llB = new LinkedList();
-        llB.insertNode(5);
-        llB.insertNode(9);
+        llB.insertNode(7);
         llB.insertNode(2);
-        llA.traverseLL();
-        llB.traverseLL();
-        Questions q = new Questions();
-        LinkedList result = q.sumList(llA, llB);
-        result.traverseLL();
+        llB.insertNode(2);
+//        llA.traverseLL();
+//        llB.traverseLL();
+        Questions q5 = new Questions();
+//        LinkedList result = q.sumList(llA, llB);
+//        result.traverseLL();
+        q5.addSameNode(llA, llB, 7);
+        q5.addSameNode(llA, llB, 2);
+        q5.addSameNode(llA, llB, 1);
+        Node inter = q5.findIntersection(llA, llB);
+        System.out.println(inter.value);
 
     }
 }
