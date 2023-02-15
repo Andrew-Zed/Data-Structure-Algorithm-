@@ -5,15 +5,14 @@ class Main {
     public static void main(String[] args) {
 
         Stack newStack = new Stack();
-        boolean result1 = newStack.isEmpty();
-        System.out.println(result1);
-
         newStack.push(1);
         newStack.push(2);
         newStack.push(3);
 
-        boolean result = newStack.isEmpty();
+        int result = newStack.pop();
         System.out.println(result);
+        int result2 = newStack.pop();
+        System.out.println(result2);
 
     }
 

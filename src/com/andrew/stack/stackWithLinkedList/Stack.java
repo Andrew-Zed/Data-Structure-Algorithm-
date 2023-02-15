@@ -23,5 +23,17 @@ class Stack {
         }
     }
 
+    // Pop method
+    int pop() {
+        int result = -1;
+        if (isEmpty()) {
+            System.out.println("The Stack is Empty!");
+        } else {
+            result = linkedList.head.value;
+            linkedList.deletionOfNode(0);
+        }
+        return result;
+    }
+
 
 }
