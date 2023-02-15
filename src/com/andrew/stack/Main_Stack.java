@@ -9,11 +9,8 @@ class Main_Stack {
         newStack.push(3);
         newStack.push(4);
 
-        int result = newStack.peek();
-        System.out.println(result);
-        System.out.println();
-        int result2 = newStack.peek();
-        System.out.println(result2);
+        newStack.deleteStack();
+
 
     }
 

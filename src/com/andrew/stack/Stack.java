@@ -61,4 +61,10 @@ class Stack {
         }
     }
 
+    // Delete method
+    void deleteStack() {
+        arr = null;
+        System.out.println("The stack is successfully deleted");
+    }
+
 }
