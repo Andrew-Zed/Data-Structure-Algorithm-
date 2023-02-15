@@ -45,5 +45,11 @@ class Stack {
         }
     }
 
+    // Delete method
+    void deleteStack() {
+        linkedList.head = null;
+        System.out.println("The Stack is deleted");
+    }
+
 
 }
