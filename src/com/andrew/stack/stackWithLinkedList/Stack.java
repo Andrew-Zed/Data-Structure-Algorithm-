@@ -35,5 +35,15 @@ class Stack {
         return result;
     }
 
+    // Peek Method
+    int peek() {
+        if (isEmpty()) {
+            System.out.println("The Stack is Empty!");
+            return -1;
+        } else {
+            return linkedList.head.value;
+        }
+    }
+
 
 }
