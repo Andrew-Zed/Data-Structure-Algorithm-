@@ -1,4 +1,4 @@
-package com.andrew.stack;
+package com.andrew.stack.stackWithArray;
 
 class Stack {
     int[] arr;
