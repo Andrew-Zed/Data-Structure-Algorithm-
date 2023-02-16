@@ -1,0 +1,135 @@
+Question 2
+
+Team Formation 2
+FC Codelona is trying to assemble a team from a roster of players. They have a minimum number of players
+they want to sign, and each player needs to have a skill rating within a certain range. Given a list of players’
+skill levels with desired upper and lower bounds, determine how many teams can be created from the list
+
+Example
+
+Skills = [12, 4, 6, 13, 5, 10]
+minPlayers = 3
+minLevel = 4
+maxLevel = 10
+The list includes players with skills level [12, 4, 6, 13, 5, 10]
+They want to hire at least 3 players with skills levels between 4 and 10, inclusive
+There are 5 ways form a team of at least 3 players: {4, 5, 6}, {4, 6, 10}, {4, 5, 10}, {5, 6, 10} and {4, 5, 6, 10}
+Return 5
+Function Description
+Complete the function countTeams in the editor below
+countTeam has the following parameter(s)
+ int skills[n]: an array of integers that represent the skill level per player
+ int minPlayers: the minimum number of team members required
+ int minLevel: the lower limit for skill level, inclusive
+ int maxLevel: the upper limit for skill level inclusive
+Return
+int the total number of teams that can be formed per the criteria
+Constraints
+1 <=  n <= 20
+1 <= minPlayers <= n
+1 <= minLevel <= maxLevel <= 1000
+1 <= skills[i] <= 1000
+
+To solve this problem, we can use a recursive approach. We start by iterating through the list of players
+and for each player, we have two options: we can either include the player in the current team or skip the player
+and move on to the next player. We keep track of the number of players included in the current team and the total
+number of teams that satisfy the criteria. When the number of players included in the current team is equal to the
+minimum number of players required, we check if the current team satisfies the skill level criteria. If it does,
+we increment the total number of teams.
+
+
+public static int countTeams(int[] skills, int minPlayers, int minLevel, int maxLevel) {
+    int[] currentSkills = new int[minPlayers];
+    int[] used = new int[skills.length];
+    return countTeamsHelper(skills, used, currentSkills, minPlayers, minLevel, maxLevel, 0, 0);
+}
+
+private static int countTeamsHelper(int[] skills, int[] used, int[] currentSkills, int minPlayers,
+                                int minLevel, int maxLevel, int start, int numIncluded) {
+    int numTeams = 0;
+
+    if (numIncluded == minPlayers) {
+        int minSkill = Integer.MAX_VALUE;
+        int maxSkill = Integer.MIN_VALUE;
+
+        for (int skill : currentSkills) {
+            if (skill < minSkill) {
+                minSkill = skill;
+            }
+            if (skill > maxSkill) {
+                maxSkill = skill;
+            }
+        }
+
+        if (minSkill >= minLevel && maxSkill <= maxLevel) {
+            numTeams++;
+        }
+
+        return numTeams;
+    }
+
+    for (int i = start; i < skills.length; i++) {
+        if (used[i] == 0) {
+            used[i] = 1;
+            currentSkills[numIncluded] = skills[i];
+            numTeams += countTeamsHelper(skills, used, currentSkills, minPlayers, minLevel,
+                            maxLevel, i + 1, numIncluded + 1);
+            used[i] = 0;
+        }
+    }
+
+    return numTeams;
+}
+
+
+Explanation
+
+We start by defining the countTeams function that takes in the same parameters as the Python code. We also
+define an array currentSkills to keep track of the skill levels of the players included in the current team, and
+an array used to keep track of which players have been included in the current team.
+
+The countTeamsHelper function is a recursive function that takes in the same parameters as the Python code, as
+well as start and numIncluded which represent the index of the first player we should consider including in the
+current team and the number of players included in the current team, respectively. The function returns the total
+number of teams that satisfy the criteria.
+
+In the helper function, if the number of players included in the current team is equal to the minimum number of
+players required, we calculate the minimum and maximum skill levels in the current team and check if they satisfy
+the skill level criteria. If they do, we increment the numTeams counter.
+
+Otherwise, we iterate through the remaining players, starting at the start index. For each player, we check if the
+player has already been included in the current team. If not, we mark the player as used, add their skill level to
+currentSkills, and recursively call countTeamsHelper with start set to the next index, numIncluded incremented by 1,
+and the updated currentSkills and used arrays. After the recursive call, we mark the player as unused.
+
+
+Finally, we return the numTeams counter.
+
+Sure, here's a step-by-step explanation of the algorithm:
+
+We start by defining the countTeams function that takes in the same parameters as the Python code. We also define an
+array currentSkills to keep track of the skill levels of the players included in the current team, and an array used
+to keep track of which players have been included in the current team.
+
+We then call the countTeamsHelper function with the initial parameters, including start and numIncluded set to 0.
+
+The countTeamsHelper function is a recursive function that takes in the same parameters as the Python code, as well as
+start and numIncluded which represent the index of the first player we should consider including in the current team
+and the number of players included in the current team, respectively. The function returns the total number of teams
+that satisfy the criteria.
+
+In the helper function, we first check if the number of players included in the current team is equal to the minimum
+number of players required. If so, we calculate the minimum and maximum skill levels in the current team and check if
+they satisfy the skill level criteria. If they do, we increment the numTeams counter.
+
+Otherwise, we iterate through the remaining players, starting at the start index. For each player, we check if the
+player has already been included in the current team. If not, we mark the player as used, add their skill level to
+currentSkills, and recursively call countTeamsHelper with start set to the next index, numIncluded incremented by 1,
+and the updated currentSkills and used arrays. After the recursive call, we mark the player as unused.
+
+Finally, we return the numTeams counter.
+
+The algorithm essentially generates all possible combinations of players and checks if each combination satisfies
+the skill level criteria. Since the number of possible combinations can be very large, the algorithm can become
+very slow as the number of players increases. However, since the constraints on the problem are relatively small,
+this algorithm should be able to handle the inputs efficiently.

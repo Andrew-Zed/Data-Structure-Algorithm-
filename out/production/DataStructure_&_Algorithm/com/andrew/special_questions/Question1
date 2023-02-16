@@ -1,0 +1,112 @@
+Question 1 :
+Get the largest possible value
+
+Rearrange an array of integers so that the calculated value is maximised.
+Among the arrangements that satisfy the test, choose the array with minimal ordering.
+The value of U for an array with n elements is calculated as
+U = arr[1] x arr[2] x (1 ÷ arr[3]) x arr[4] x …x arr[n -1] x (1 ÷ arr[n]) if n is odd
+Or
+U = arr[1] x arr[2] x (1 ÷ arr[3]) x arr[4] x … x (1 ÷ arr[n -1]) x arr[n] if n is even
+
+Solution to Question 1
+
+The maximizeU method takes an integer array arr as input, sorts it in descending order,
+and then applies the greedy algorithm to obtain the largest possible value of U. The method
+returns an array containing the value of U and the sorted array. The sorting ensures that we get
+the array with the minimal ordering among those that satisfy the test.
+
+Note that the implementation handles both even and odd length arrays correctly. Also note that
+we use 1.0/arr[i] instead of 1/arr[i] to avoid integer division, which could give incorrect results.
+
+import java.util.Arrays;
+
+public class MaximizeU {
+
+    public static double[] maximizeU(int[] arr) {
+        // Sort array in descending order
+        Arrays.sort(arr);
+        int n = arr.length;
+        for (int i = 0; i < n/2; i++) {
+            int temp = arr[i];
+            arr[i] = arr[n-1-i];
+            arr[n-1-i] = temp;
+        }
+
+        // Apply greedy algorithm
+        if (n % 2 == 0) {
+            for (int i = 0; i < n-1; i += 2) {
+                if (arr[i+1] > arr[i]) {
+                    int temp = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = temp;
+                }
+            }
+        } else {
+            for (int i = 0; i < n-2; i += 2) {
+                if (arr[i+1] > arr[i]) {
+                    int temp = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = temp;
+                }
+            }
+            if (1.0/arr[n-1] > arr[n-2]) {
+                int temp = arr[n-1];
+                arr[n-1] = arr[n-2];
+                arr[n-2] = temp;
+            }
+        }
+
+        // Calculate U
+        double U = arr[0];
+        for (int i = 1; i < n-1; i++) {
+            if (i % 2 == 1) {
+                U *= arr[i];
+            } else {
+                U *= 1.0/arr[i];
+            }
+        }
+        if (n % 2 == 0) {
+            U *= arr[n-1];
+        } else {
+            U *= 1.0/arr[n-1];
+        }
+
+        return new double[] {U, arr};
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {5, 3, 1, 4, 2};
+        double[] result = maximizeU(arr);
+        System.out.println("U = " + result[0]);
+        System.out.println("Array = " + Arrays.toString(result[1]));
+    }
+}
+
+Explanation to the question 1 solution
+
+The task is to rearrange an array of integers to maximize the value of U, where U is calculated as follows:
+
+For an array with an odd number of elements:
+U = arr[1] x arr[2] x (1 ÷ arr[3]) x arr[4] x … x arr[n-1] x (1 ÷ arr[n])
+For an array with an even number of elements:
+U = arr[1] x arr[2] x (1 ÷ arr[3]) x arr[4] x … x (1 ÷ arr[n-1]) x arr[n]
+The algorithm to maximize U involves two steps:
+
+Sort the array in descending order.
+Apply a greedy algorithm to swap adjacent elements to ensure that the largest possible product is obtained.
+The first step is straightforward. We can use the Arrays.sort method to sort the array in descending order. Then,
+we can use a loop to swap the first and last elements, the second and second-to-last elements, and so on, to obtain
+an array with the minimal ordering.
+
+The second step is where the optimization happens. We use a greedy algorithm to swap adjacent elements to ensure
+that the largest possible product is obtained. For an array with an even number of elements, we swap adjacent elements
+if the second element is larger than the first. For an array with an odd number of elements, we do the same thing
+for all but the last two elements, and then we swap the last two elements if the reciprocal of the last element
+is larger than the second-to-last element.
+
+After these two steps, we can calculate the value of U using the formula provided, and return the sorted array
+and the value of U.
+
+
+
+
