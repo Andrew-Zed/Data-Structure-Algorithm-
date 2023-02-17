@@ -31,5 +31,21 @@ class QueueArray {
         }
     }
 
+    // Enqueue
+    void enQueue(int value) {
+        if (isFull()) {
+            System.out.println("The Queue is Full!");
+        } else if (isEmpty()){
+            beginningOfQueue = 0;
+            topOfQueue++;
+            arr[topOfQueue] = value;
+            System.out.println("Successfully inserted" + value + "int the queue");
+        } else {
+            topOfQueue++;
+            arr[topOfQueue] = value;
+            System.out.println("Successfully inserted" + value + "int the queue");
+        }
+    }
+
 
 }
