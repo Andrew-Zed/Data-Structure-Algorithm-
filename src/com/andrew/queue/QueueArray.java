@@ -39,13 +39,27 @@ class QueueArray {
             beginningOfQueue = 0;
             topOfQueue++;
             arr[topOfQueue] = value;
-            System.out.println("Successfully inserted" + value + "int the queue");
+            System.out.println("Successfully inserted " + value + " into the queue");
         } else {
             topOfQueue++;
             arr[topOfQueue] = value;
-            System.out.println("Successfully inserted" + value + "int the queue");
+            System.out.println("Successfully inserted " + value + " into the queue");
         }
     }
 
+    // deQueue
+    int deQueue() {
+        if (isEmpty()) {
+            System.out.println("The Queue is empty!");
+            return -1;
+        } else {
+            int result = arr[beginningOfQueue];
+            beginningOfQueue++;
+            if (beginningOfQueue > topOfQueue) {
+                beginningOfQueue = topOfQueue = -1;
+            }
+            return result;
+        }
+    }
 
 }

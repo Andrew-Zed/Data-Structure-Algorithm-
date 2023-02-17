@@ -8,6 +8,9 @@ public class Main {
         newQueue.enQueue(3);
         newQueue.enQueue(4);
         newQueue.enQueue(5);
-        newQueue.enQueue(6);
+        int result = newQueue.deQueue();
+        System.out.println(result);
+        int result2 = newQueue.deQueue();
+        System.out.println(result2);
     }
 }
