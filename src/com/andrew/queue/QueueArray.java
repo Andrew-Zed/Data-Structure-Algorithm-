@@ -72,4 +72,10 @@ class QueueArray {
         }
     }
 
+    // delete
+    void deleteQueue() {
+        arr = null;
+        System.out.println("The Queue is successfully deleted");
+    }
+
 }

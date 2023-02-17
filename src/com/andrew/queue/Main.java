@@ -7,10 +7,7 @@ public class Main {
         newQueue.enQueue(2);
         newQueue.enQueue(3);
         newQueue.enQueue(4);
-        newQueue.enQueue(5);
-        int result = newQueue.peek();
-        System.out.println(result);
-        int result2 = newQueue.peek();
-        System.out.println(result2);
+        newQueue.deleteQueue();
+
     }
 }
