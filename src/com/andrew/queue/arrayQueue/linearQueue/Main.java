@@ -1,4 +1,5 @@
-package com.andrew.queue;
+package com.andrew.queue.arrayQueue.linearQueue;
+
 
 public class Main {
     public static void main(String[] args) {

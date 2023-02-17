@@ -1,4 +1,4 @@
-package com.andrew.queue;
+package com.andrew.queue.arrayQueue.linearQueue;
 
 class QueueArray {
     int[] arr;
