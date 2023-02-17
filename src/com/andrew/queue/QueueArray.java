@@ -62,4 +62,14 @@ class QueueArray {
         }
     }
 
+    // Peek
+    int peek() {
+        if (!isEmpty()) {
+            return arr[beginningOfQueue];
+        } else {
+            System.out.println("The Queue is empty");
+            return -1;
+        }
+    }
+
 }
