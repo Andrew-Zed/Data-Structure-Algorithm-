@@ -22,4 +22,34 @@ class CircularQueue {
              return false;
          }
     }
+
+    // isFull
+    boolean isFull() {
+        if (topOfQueue + 1 == beginningOfQueue) {
+            return true;
+        } else if (beginningOfQueue == 0 && topOfQueue+1 == size) {
+            return true;
+        } else return false;
+    }
+
+    // enQueue
+    void enQueue(int value) {
+        if (isFull()) {
+            System.out.println("The CQ is full!");
+        } else if (isEmpty()) {
+            beginningOfQueue = 0;
+            topOfQueue++;
+            arr[topOfQueue] = value;
+            System.out.println("Successfully inserted " + value + " in the queue");
+        } else {
+            if (topOfQueue+1 == size) {
+                topOfQueue = 0;
+            } else {
+                topOfQueue++;
+            }
+            arr[topOfQueue] = value;
+            System.out.println("Successfully inserted " + value + " in the queue");
+        }
+    }
+
 }
