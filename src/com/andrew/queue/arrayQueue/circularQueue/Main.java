@@ -7,10 +7,14 @@ public class Main {
         newCQ.enQueue(20);
         newCQ.enQueue(30);
         newCQ.enQueue(40);
-        int result = newCQ.deQueue();
+        int result = newCQ.peek();
         System.out.println(result);
-        int result2 = newCQ.deQueue();
+        int result2 = newCQ.peek();
         System.out.println(result2);
+
+        newCQ.deleteQueue();
+
+
 
     }
 }

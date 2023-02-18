@@ -71,4 +71,20 @@ class CircularQueue {
         }
     }
 
+    // peek
+    int peek() {
+        if (isEmpty()) {
+            System.out.println("The CQ is empty");
+            return -1;
+        } else {
+            return arr[beginningOfQueue];
+        }
+    }
+
+    // deleteQueue
+    void deleteQueue() {
+        arr = null;
+        System.out.println("The CQ is successfully deleted");
+    }
+
 }
