@@ -52,4 +52,23 @@ class CircularQueue {
         }
     }
 
+    // deQueue
+    int deQueue() {
+        if (isEmpty()) {
+            System.out.println("The CQ is empty");
+            return -1;
+        } else {
+            int result = arr[beginningOfQueue];
+            arr[beginningOfQueue] = 0;
+            if (beginningOfQueue == topOfQueue) {
+                beginningOfQueue = topOfQueue = -1;
+            } else if (beginningOfQueue + 1 == size) {
+                beginningOfQueue = 0;
+            } else {
+                beginningOfQueue++;
+            }
+            return result;
+        }
+    }
+
 }
