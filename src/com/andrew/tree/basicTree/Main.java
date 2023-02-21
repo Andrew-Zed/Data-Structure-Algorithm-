@@ -1,4 +1,4 @@
-package com.andrew.tree;
+package com.andrew.tree.basicTree;
 
 public class Main {
     public static void main(String[] args) {

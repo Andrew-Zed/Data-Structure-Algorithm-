@@ -1,4 +1,4 @@
-package com.andrew.tree;
+package com.andrew.tree.basicTree;
 
 import java.util.ArrayList;
 
