@@ -38,6 +38,8 @@ class Main {
         binaryTree.inOrder(binaryTree.root);
         System.out.println("\n============PostOrder Traversal=================");
         binaryTree.postOrder(binaryTree.root);
+        System.out.println("\n============LevelOrder Traversal=================");
+        binaryTree.levelOrder();
 
     }
 }
