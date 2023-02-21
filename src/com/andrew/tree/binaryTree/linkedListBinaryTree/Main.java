@@ -32,9 +32,12 @@ class Main {
         N4.right = N9;
 
         binaryTree.root = N1;
+        System.out.println("\n============PreOrder Traversal=================");
         binaryTree.preOrder(binaryTree.root);
         System.out.println("\n============InOrder Traversal=================");
         binaryTree.inOrder(binaryTree.root);
+        System.out.println("\n============PostOrder Traversal=================");
+        binaryTree.postOrder(binaryTree.root);
 
     }
 }
