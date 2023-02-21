@@ -33,6 +33,8 @@ class Main {
 
         binaryTree.root = N1;
         binaryTree.preOrder(binaryTree.root);
+        System.out.println("\n============InOrder Traversal=================");
+        binaryTree.inOrder(binaryTree.root);
 
     }
 }
