@@ -12,6 +12,8 @@ class Main {
         binaryTree.insert("N7");
 
         binaryTree.levelOrder();
+        System.out.println();
+        System.out.println(binaryTree.getDeepestNode().value);
 
     }
 }

@@ -104,4 +104,21 @@ class BinaryTreeLL {
             }
         }
     }
+
+    // Get Deepest node
+    BinaryNode getDeepestNode() {
+        Queue<BinaryNode> queue = new LinkedList<>();
+        queue.add(root);
+        BinaryNode presentNode = null;
+        while (!queue.isEmpty()) {
+            presentNode = queue.remove();
+            if (presentNode.left != null) {
+                queue.add(presentNode.left);
+            }
+            if (presentNode.right != null) {
+                queue.add(presentNode.right);
+            }
+        }
+        return presentNode;
+    }
 }
