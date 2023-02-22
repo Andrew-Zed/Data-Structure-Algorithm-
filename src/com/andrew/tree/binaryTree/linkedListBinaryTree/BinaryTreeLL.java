@@ -121,4 +121,25 @@ class BinaryTreeLL {
         }
         return presentNode;
     }
+
+    // Delete Deepest Node
+    void deleteDeepestNode() {
+        Queue<BinaryNode> queue = new LinkedList<>();
+        queue.add(root);
+        BinaryNode previousNode, presentNode = null;
+        while (!queue.isEmpty()) {
+            previousNode = presentNode;
+            presentNode = queue.remove();
+            if (presentNode.left == null) {
+                previousNode.right = null;
+                return;
+            }
+            if (presentNode.right == null) {
+                presentNode.left = null;
+                return;
+            }
+            queue.add(presentNode.left);
+            queue.add(presentNode.right);
+        }
+    }
 }
