@@ -142,4 +142,22 @@ class BinaryTreeLL {
             queue.add(presentNode.right);
         }
     }
+
+    // Delete Given Node
+    void deleteNode(String value) {
+        Queue<BinaryNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            BinaryNode presentNode = queue.remove();
+            if (presentNode.value == value) {
+                presentNode.value = getDeepestNode().value;
+                deleteDeepestNode();
+                System.out.println("The node is deleted");
+            } else {
+                if (presentNode.left != null) queue.add(presentNode.left);
+                if (presentNode.right != null) queue.add(presentNode.right);
+            }
+        }
+        System.out.println("The node does not exist in this BT");
+    }
 }

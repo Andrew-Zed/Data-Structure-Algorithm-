@@ -12,8 +12,8 @@ class Main {
         binaryTree.insert("N7");
 
         binaryTree.levelOrder();
-        binaryTree.deleteDeepestNode();
         System.out.println();
+        binaryTree.deleteNode("N3");
         binaryTree.levelOrder();
 
     }
