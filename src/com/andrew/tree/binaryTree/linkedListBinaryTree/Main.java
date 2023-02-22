@@ -15,6 +15,9 @@ class Main {
         System.out.println();
         binaryTree.deleteNode("N3");
         binaryTree.levelOrder();
+        System.out.println();
+
+        binaryTree.deleteBT();
 
     }
 }
