@@ -12,5 +12,8 @@ class Main_BT_Array {
         newBinaryTree.insert("N7");
         newBinaryTree.insert("N8");
 
+        System.out.println();
+        newBinaryTree.preOrder(1);
+
     }
 }
