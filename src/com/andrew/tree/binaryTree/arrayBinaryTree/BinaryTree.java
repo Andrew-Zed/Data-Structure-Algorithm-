@@ -1,5 +1,7 @@
 package com.andrew.tree.binaryTree.arrayBinaryTree;
 
+import java.util.Arrays;
+
 class BinaryTree {
     String[] arr;
     int lastUsedIndex;
@@ -57,6 +59,13 @@ class BinaryTree {
         postOrder(2 * index);
         postOrder(2 * index + 1);
         System.out.print(arr[index] + " ");
+    }
+
+    // Level Order Traversal
+    void levelOrder() {
+        for (int i = 1; i < lastUsedIndex; i++) {
+            System.out.print(arr[i] + " ");
+        }
     }
 
 }
