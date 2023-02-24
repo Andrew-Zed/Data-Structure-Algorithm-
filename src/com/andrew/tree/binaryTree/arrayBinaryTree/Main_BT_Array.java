@@ -21,9 +21,12 @@ class Main_BT_Array {
         newBinaryTree.postOrder(1);
         System.out.println("\n======LevelOrder Traversal======");
         newBinaryTree.levelOrder();
-        System.out.println();
-
+        System.out.println("\n======Search Binary Tree======");
         newBinaryTree.search("N5");
+        System.out.println("\n======Delete a node in Binary Tree======");
+        newBinaryTree.delete("N6");
+        newBinaryTree.levelOrder();
+
 
     }
 }
