@@ -21,6 +21,9 @@ class Main_BT_Array {
         newBinaryTree.postOrder(1);
         System.out.println("\n======LevelOrder Traversal======");
         newBinaryTree.levelOrder();
+        System.out.println();
+
+        newBinaryTree.search("N5");
 
     }
 }

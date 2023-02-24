@@ -1,7 +1,5 @@
 package com.andrew.tree.binaryTree.arrayBinaryTree;
 
-import java.util.Arrays;
-
 class BinaryTree {
     String[] arr;
     int lastUsedIndex;
@@ -66,6 +64,18 @@ class BinaryTree {
         for (int i = 1; i < lastUsedIndex; i++) {
             System.out.print(arr[i] + " ");
         }
+    }
+
+    // Search method
+    int search(String value) {
+        for (int i = 1; i < lastUsedIndex; i++) {
+            if (arr[i] == value) {
+                System.out.println(value + " exists at the location " + i);
+                return i;
+            }
+        }
+        System.out.println("The value does not exist in BT");
+        return -1;
     }
 
 }
