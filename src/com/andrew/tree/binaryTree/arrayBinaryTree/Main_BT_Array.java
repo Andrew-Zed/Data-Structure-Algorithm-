@@ -15,8 +15,9 @@ class Main_BT_Array {
 
         System.out.println("======PreOrder Traversal======");
         newBinaryTree.preOrder(1);
-        System.out.println();
-        System.out.println("======InOrder Traversal======");
+        System.out.println("\n======InOrder Traversal======");
         newBinaryTree.inOrder(1);
+        System.out.println("\n======PostOrder Traversal======");
+        newBinaryTree.postOrder(1);
     }
 }
