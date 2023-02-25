@@ -90,4 +90,14 @@ class BinaryTree {
          }
     }
 
+    // Delete BT
+    void deleteBT() {
+        try {
+            arr = null;
+            System.out.println("The Bt has been successfully deleted");
+        } catch (Exception e) {
+            System.out.println("There was an error deleting the tree");
+        }
+    }
+
 }

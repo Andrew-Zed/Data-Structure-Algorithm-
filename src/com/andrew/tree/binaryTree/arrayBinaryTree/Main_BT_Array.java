@@ -26,6 +26,9 @@ class Main_BT_Array {
         System.out.println("\n======Delete a node in Binary Tree======");
         newBinaryTree.delete("N6");
         newBinaryTree.levelOrder();
+        System.out.println("\n======Delete Binary Tree======");
+        newBinaryTree.deleteBT();
+
 
 
     }
