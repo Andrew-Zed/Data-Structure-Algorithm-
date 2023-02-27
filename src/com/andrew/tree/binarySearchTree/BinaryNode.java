@@ -5,4 +5,9 @@ class BinaryNode {
     int height;
     BinaryNode left;
     BinaryNode right;
+
+    @Override
+    public String toString() {
+        return value + "";
+    }//end of method
 }

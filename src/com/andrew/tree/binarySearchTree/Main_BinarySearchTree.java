@@ -12,6 +12,9 @@ class Main_BinarySearchTree {
         newBST.insert(100);
         newBST.insert(20);
         newBST.insert(40);
+        System.out.println("\n========PreOrder Traversal==========");
+        newBST.preOrder(newBST.root);
+
 
     }
 }

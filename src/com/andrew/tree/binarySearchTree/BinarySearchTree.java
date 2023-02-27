@@ -3,7 +3,7 @@ package com.andrew.tree.binarySearchTree;
 class BinarySearchTree {
     BinaryNode root;
 
-    public BinarySearchTree() {
+    BinarySearchTree() {
         this.root = null;
     }
 
@@ -12,7 +12,7 @@ class BinarySearchTree {
         if (currentNode == null) {
             BinaryNode newNode = new BinaryNode();
             newNode.value = value;
-            System.out.println("The value successfully inserted");
+            System.out.println("The value " + value + " is successfully inserted in the node");
             return newNode;
         } else if (value <= currentNode.value) {
             currentNode.left = insert(currentNode.left, value);
@@ -24,6 +24,16 @@ class BinarySearchTree {
     }
 
     void insert(int value) {
-        insert(root, value);
+        root = insert(root, value);
+    }
+
+    // PreOrder Traversal
+     void preOrder(BinaryNode node) {
+        if (node == null) {
+            return;
+        }
+        System.out.print(node.value + " ");
+        preOrder(node.left);
+        preOrder(node.right);
     }
 }
