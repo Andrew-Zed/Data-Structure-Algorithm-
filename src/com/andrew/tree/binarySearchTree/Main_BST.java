@@ -1,6 +1,6 @@
 package com.andrew.tree.binarySearchTree;
 
-class Main_BinarySearchTree {
+class Main_BST {
     public static void main(String[] args) {
         BinarySearchTree newBST = new BinarySearchTree();
         newBST.insert(70);
@@ -14,7 +14,8 @@ class Main_BinarySearchTree {
         newBST.insert(40);
         System.out.println("\n========PreOrder Traversal==========");
         newBST.preOrder(newBST.root);
-
+        System.out.println("\n========InOrder Traversal==========");
+        newBST.inOrder(newBST.root);
 
     }
 }
