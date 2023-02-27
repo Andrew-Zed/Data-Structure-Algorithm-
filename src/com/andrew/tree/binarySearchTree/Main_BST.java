@@ -20,6 +20,8 @@ class Main_BST {
         newBST.postOrder(newBST.root);
         System.out.println("\n========LevelOrder Traversal==========");
         newBST.levelOrder();
+        System.out.println("\n========Search Binary Tree==========");
+        newBST.search(newBST.root, 40);
 
     }
 }
