@@ -22,6 +22,11 @@ class Main_BST {
         newBST.levelOrder();
         System.out.println("\n========Search Binary Tree==========");
         newBST.search(newBST.root, 40);
+        System.out.println("\n============Delete Node==============");
+        newBST.levelOrder();
+        System.out.println();
+        newBST.deleteNode(newBST.root, 90);
+        newBST.levelOrder();
 
     }
 }
