@@ -16,6 +16,8 @@ class Main_BST {
         newBST.preOrder(newBST.root);
         System.out.println("\n========InOrder Traversal==========");
         newBST.inOrder(newBST.root);
+        System.out.println("\n========PostOrder Traversal==========");
+        newBST.postOrder(newBST.root);
 
     }
 }
